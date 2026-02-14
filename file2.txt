@@ -1,2 +1,3 @@
 this is file 2 - initial content
 second version update
+small update in feature-2
