@@ -1,6 +1,7 @@
 node {
 
     stage('Clone Repository') {
+        checkout scm
         echo 'Cloning repository...'
     }
 
@@ -16,4 +17,5 @@ node {
         archiveArtifacts artifacts: '*.txt', fingerprint: true
     }
 }
+
 
