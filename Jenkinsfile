@@ -1,30 +1,19 @@
-pipeline {
-    agent any
+node {
 
-    stages {
+    stage('Clone Repository') {
+        echo 'Cloning repository...'
+    }
 
-        stage('Clone Repository') {
-            steps {
-                echo 'Cloning repository...'
-            }
-        }
+    stage('Build') {
+        echo 'Building project...'
+    }
 
-        stage('Build') {
-            steps {
-                echo 'Building project...'
-            }
-        }
+    stage('Echo Build Status') {
+        echo 'Build completed successfully!'
+    }
 
-        stage('Echo Build Status') {
-            steps {
-                echo 'Build completed successfully!'
-            }
-        }
-
-        stage('Archive Artifacts') {
-            steps {
-                archiveArtifacts artifacts: '*.txt', fingerprint: true
-            }
-        }
+    stage('Archive Artifacts') {
+        archiveArtifacts artifacts: '*.txt', fingerprint: true
     }
 }
+
